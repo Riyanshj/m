@@ -229,6 +229,8 @@ nav #menu li a:hover {
   }
 }
   </style>
+ 
+
   <br>
   <br>
   <br>
@@ -297,9 +299,20 @@ nav #menu li a:hover {
         overflow: hidden;
         
     }
+    
     a{
         text-decoration: none;
         color: rgb(57, 57, 57);
+        transition: all 0.25s ease-in-out;
+    }
+    .socials a:hover{
+      letter-spacing: 1rem;
+      font-weight: 700;
+    }
+    .contact h1{
+      padding-left: 5%;
+      padding-top: 7.5%;
+      font-weight: bolder;
     }
     @media(max-width: 768px){
         .socials{
@@ -308,6 +321,9 @@ nav #menu li a:hover {
         .socials h1 a {
             display: block;
             margin-bottom: 30px;
+        }
+        #svg{
+          visibility: hidden;
         }
       
        
@@ -329,6 +345,7 @@ nav #menu li a:hover {
     .wrapper {
         position: relative;
     }
+    
     
 </style>
 <script>
@@ -402,4 +419,48 @@ nav #menu li a:hover {
       });
 
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+
+      <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+      <script type="text/javascript">
+
+      // navigation starts here
+      $("#toggle").click(function() {
+            $(this).toggleClass('on');
+            $("#resize").toggleClass("active");
+      });
+
+      $("#resize ul li a").click(function() {
+            $(this).toggleClass('on');
+            $("#resize").toggleClass("active");
+      });
+
+      $(".close-btn").click(function() {
+            $(this).toggleClass('on');
+            $("#resize").toggleClass("active");
+      });
+
+      // navigation ends here
+
+      // nav animation
+
+      TweenMax.from("#brand", 1, {
+            delay: 0.4,
+            y: 10,
+            opacity: 0,
+            ease: Expo.easeInOut
+      })
+
+      TweenMax.staggerFrom("#menu li a", 1, {
+            delay: 0.4,
+            opacity: 0,
+            ease: Expo.easeInOut
+      }, 0.1);
+
+      // nav animation ends
+
+      new WOW().init();
+
+
+      </script>
 </html>
