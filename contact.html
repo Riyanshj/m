@@ -10,223 +10,65 @@
     <title>CONTACT</title>
 </head>
 <body>
-    <nav>
-        <span id="brand">
-              <a href="index.html">RIYANSH JAIN</a>
-        </span>
-
-        <ul id="menu">
-              <li><a href="index.html">home<span>.</span></a></li>
-              <li><a href="work.html" >work<span>.</span></a></li>
-              <li><a href="about.html">about me<span>.</span></a></li>
-              <li><a href="contact.html"style="text-decoration: underline">contact<span>.</span></a></li>
-        </ul>
-
-        <div id="toggle">
-              <div class="span">
-                    <svg viewBox="0 0 10 20">
-                          <circle cx="4" cy="5" r="1.5" fill="black"/>
-                          
-                        </svg>
-                        
-              </div>
-        </div>
-
-  </nav>
-  <div id="resize">
-    <div class="close-btn">X</div>
-
-    <ul id="menu">
-          <li><a href="index.html">home<span>.</span></a></li>
-          <li><a href="work.html" style="text-decoration: underline">work<span>.</span></a></li>
-          <li><a href="about.html">about me<span>.</span></a></li>
-          <li><a href="contact.html">contact<span>.</span></a></li>
-    </ul>
-</div>
+  <div class="navbar">
+    <div class="navbar-container">
+      <div class="site-title"><a href="index.html">RJ</a></div>
+      <div class="site-year"><a href="work.html" style="text-decoration: none;" >Work</a>,<a href="about.html" style="text-decoration: none;">ABOUT</a></div>
+    </div>
+  </div>
+  <div class="divider"></div>
   <style>
-    nav {
-  width: 100%;
-  background: rgba(195, 195, 195, 0);
-  height: 80px;
-  position: fixed;
-  z-index: 1;
-  font-family: "Clash Display" !important;
-  top: 0%;
+    .divider {
+	width: 100%;
+	height: 2px;
+	background: #000000;
+}
+.navbar .navbar-container {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	padding: 12px 0;
+	font-size: 16px;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
 }
 
-nav #brand {
-  float: left;
-  display: block;
-  margin-left: 82px;
-  line-height: 80px;
-  font-weight: bold;
-  mix-blend-mode: difference;
+.navbar .navbar-container .site-title {
+	-webkit-box-flex: 1;
+	-ms-flex-positive: 1;
+	flex-grow: 1;
 }
 
-nav #brand a {
-  color: rgb(57, 57, 57) ;
-  transition: all 0.3s ease-out;
-  font-family: "Clash Display" !important;
-  font-weight: 600;
-  mix-blend-mode: difference;
-  font-size: 40px;
+.navbar .navbar-container .site-type {
+	-webkit-box-flex: 1;
+	-ms-flex-positive: 1;
+	flex-grow: 1;
 }
 
-nav #brand a:hover {
-  text-decoration: none;
+.navbar .navbar-container .site-year {
+	-webkit-box-flex: 2;
+	-ms-flex-positive: 2;
+	flex-grow: 2;
+	text-align: right;
 }
 
-nav #menu {
-  float: left;
-  right: 80px;
-  position: fixed;
-  mix-blend-mode: difference;
-  
+/* header */
+
+.header {
+	margin: 80px 0;
+	z-index: 2 !important;
 }
 
-nav #menu li {
-  padding-left: 40px;
-  display: inline-block;
-  cursor: pointer;
-  font-weight: 300;
-  line-height: 80px;
-  position: relative;
-  transition: all 0.3s ease-out;
-  font-weight: 700;
-  mix-blend-mode: difference;
-  
+.header .header-container h1 {
+	font-family: "Clash Display";
+	font-size: 12rem;
 }
 
-nav #menu li span {
-  font-weight: 700;
-  color: rgb(57, 57, 57) ;
-}
-
-nav #menu li a {
-  color: rgb(57, 57, 57) ;
-}
-
-nav #menu li a:hover {
-  text-decoration: none;
-  color: rgb(57, 57, 57) ;
-}
-
-#toggle {
-  position: absolute;
-  left: 88%;
-  top: 30%;
-  font-weight: 300;
-  z-index: 2;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-  float: right;
-  transition: all 0.3s ease-out;
-  visibility: hidden;
-  opacity: 0;
-  mix-blend-mode: difference;
-}
-
-.close-btn {
-  position: absolute;
-  right: 30px;
-  font-weight: 300;
-  z-index: 2;
-  cursor: pointer;
-  top: -2px;
-  line-height: 80px;
-}
-
-#resize {
-  z-index: 1;
-  top: 0px;
-  position: fixed;
-  background: #0f0f0f;
-  width: 100%;
-  height: 100%;
-  visibility: hidden;
-  opacity: 0;
-  transition: all 1s ease-out;
-}
-
-#resize #menu {
-  height: 90px;
-  position: absolute;
-  left: 45%;
-  transform: translateX(-40%);
-  text-align: center;
-  display: table-cell;
-  vertical-align: center;
-}
-
-#resize #menu li {
-  display: block;
-  text-align: center;
-  padding: 10px 0;
-  font-size: 50px;
-  min-height: 50px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease-out;
-}
-
-#resize li:nth-child(1) {
-  margin-top: 140px;
-}
-
-#resize #menu li a {
-  color: #fff;
-}
-
-#resize #menu li a:hover {
-  text-decoration: none;
-}
-
-#resize.active {
-  visibility: visible;
-  opacity: 1;
-}
-
-@media(max-width: 768px) {
-  #toggle {
-        visibility: visible;
-        opacity: 1;
-        
-        
-        
-  }
-  nav #brand a{
-    font-size: 15px;
-  }
-  nav #brand {
-        margin-left: 24px;
-        font-size: 10px;
-       
-  }
-  #menu a{
-        top:-175%
-  }
-  
-  #menu a {
-        font-size: 20px;
-        font-weight: 300;
-        mix-blend-mode: difference;
-        
-  }
-
-  #resize li span {
-        font-weight: bolder;
-  }
-
-  nav #menu {
-        display: none;
-  }
-}
-
-@media(min-width: 768px) {
-  #resize {
-        visibility: hidden !important;
-  }
+@media (max-width: 900px) {
+	.header .header-container h1 {
+		font-size: 5.4rem;
+	}
 }
   </style>
  
@@ -286,6 +128,27 @@ nav #menu li a:hover {
     </svg>
 </div>
 <div class="line"></div>
+<div class="section-header">
+  <div class="section-header-container">
+    <div class="section-title">Other socials</div>
+   
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<section class="socials">
+  <div class="socials-container">
+    <div class="socials-id dr"><a href="">dribble</a></div>
+    <div class="socials-id ln"><a href="">linkedin</a></div>
+    <div class="socials-id ig"><a href="">riyanshj83@gmail.com</a></div>
+    
+  </div>
+</section>
+
+<div class="divider"></div>
+
+
 </body>
 <style>
     body {
@@ -345,7 +208,31 @@ nav #menu li a:hover {
     .wrapper {
         position: relative;
     }
-    
+    .socials {
+	padding: 20px 0;
+}
+
+.socials .socials-container {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+}
+
+.socials .socials-container a {
+	cursor: pointer;
+	text-decoration: none;
+	font-family: "Clash Display" !important;
+	font-size: 64px;
+}
+
+@media (max-width: 900px) {
+	.socials .socials-container a {
+		font-size: 10px;
+	}
+}
     
 </style>
 <script>
