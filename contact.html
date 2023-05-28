@@ -13,21 +13,26 @@
   <div class="navbar">
     <div class="navbar-container">
       <div class="site-title"><a href="index.html">RJ</a></div>
-      <div class="site-year"><a href="work.html" style="text-decoration: none;" >WORK</a>,<a href="about.html" style="text-decoration: none;">ABOUT</a></div>
+      <div class="site-year"><a href="about.html" style="text-decoration: none;">ABOUT</a>,<a href="work.html" style="text-decoration: none;" >WORK</a>,<a href="contact.html" style="text-decoration: none; text-decoration:underline!important;">CONTACT</a></div>
     </div>
   </div>
   <div class="divider"></div>
   <style>
     .divider {
-	width: 100%;
+		width: 100%;
 	height: 2px;
-	background: #000000;
+	background: #1d1d1d;
+    
+    
 }
 .navbar .navbar-container {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	padding: 12px 0;
+	padding: 10px 0;
+    padding-top: 2.5px;
+    padding-left: 20px;
+    padding-right: 10px;
 	font-size: 16px;
 	-webkit-box-pack: justify;
 	-ms-flex-pack: justify;
@@ -76,7 +81,7 @@
 
   <div class=" scroll">
  <h1 style="top:30% ; font-size: 15px; "><center>LOOKING FOR SOME LINKS?<br>
-    SCROLL DOWN<br> <svg width="24" height="24" weight="100px" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M11 21.883l-6.235-7.527-.765.644 7.521 9 7.479-9-.764-.645-6.236 7.529v-21.884h-1v21.883z"/></svg></h1></center>
+    SCROOL DOWN<br> <svg width="24" height="24" weight="100px" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M11 21.883l-6.235-7.527-.765.644 7.521 9 7.479-9-.764-.645-6.236 7.529v-21.884h-1v21.883z"/></svg></h1></center>
 </div>
 <div class="wrapper">
     
@@ -121,8 +126,87 @@
         </g>
     </svg>
 </div>
+<div class="fill">
+    <h1 style="padding-left: 20px; padding-bottom: 20px; font-size: 40px;">Fill the form to contact me</h1>
+</div>
+<div class="form" >
+    <form action="https://formspree.io/f/myyaaldv"
+    method="POST">
+      I hope this email finds you well. My name is <label for="username"></label><input type="text" name="username" placeholder="Your Name" id="username" autocomplete="off" required>,
+      and I am reaching out to you regarding <label for="subject"></label><input type="text" name="subject" placeholder="Subject of Inquiry" id="subject" autocomplete="off" required>. I recently came across your portfolio website and thought it would be the perfect opportunity to connect.
+      I am interested in <label for="subject"></label><textarea name="message" placeholder="Your Text" required autocomplete="off" cols="10"></textarea>. You may contact me through
+      <label for="email"></label><input type="email" name="email" placeholder="your@gmail.com" id="email" autocomplete="off" required> .
+        <br>
+        <br>
+      <input type="submit" value="Submit">
+        
+    </form>
+    <style>
+        .form{
+            background-color: #fff;
+            padding: 60px;
+            border-radius: 40px;
+            font-size: 40px;
+            color: rgb(57, 57, 57);
+        }
+      input[type=text], select, textarea {
+     font-family: "Clash Display";
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-color: black;
+    font-size: 20px;
+  
+  }
+  input[type=email], select, textarea {
+    font-family: "Clash Display";
+     border-top: none;
+     border-left: none;
+     border-right: none;
+     border-color: black;
+     font-size: 20px;
+   
+   }
+   input[type=submit] {
+    font-family: "Clash Display";
+    background-color: #FEDA14;
+    color: rgb(57, 57, 57);
+    padding: 12px 15px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 20px;
+    
+    
+  }
+  input[type=submit]:hover {
+    background-color: #ffed86;
+  }
+  @media(max-width: 768px){
+    input[type=text], select, textarea {
+        font-size: 8px;
+    }
+    input[type=email], select, textarea {
+        font-size: 8px;
+    }
+    input[type=submit]{
+        font-size: 8px;
+        padding: 10px 12px;
+    }
+    .form{
+        border-radius: 20px;
+        padding: 10px;
+        font-size: 15px;
+        }
+        .fill h1{
+        font-size: 10px!important;
+        }
+  }
+
+  
+    </style>
+  </div>
 <div class="socials">
-    <h1 class="hidden"><a href="mailto:riyanshj83@gamil.com">GMAIL</a></h1>
     <h1 class="hidden"><a href="https://twitter.com/riyanshjain18?t=r3yL9QTeQLT1vDC5c78BvQ&s=09">TWITTER</a> </h1>
     <h1 class="hidden"><a href="https://instagram.com/jriyansh09?igshid=MzNlNGNkZWQ4Mg==">INSTAGRAM</a></h1>
     <h1 class="hidden"><a href="https://www.linkedin.com/in/riyansh-jain-890275228">LinkedIn</a></h1>
@@ -137,14 +221,14 @@
 
 <div class="divider"></div>
 
-<section class="socials">
+<section class="social">
   <div class="socials-container">
-    <div class="socials-id dr"><a href="https://www.behance.net/riyujain1">Behance</a></div>
-    <div class="socials-id ig"><a href="">riyanshj83@gmail.com</a></div>
+    <div class="socials-id dr"><a href="https://www.behance.net/riyujain1">Behance</a></div><br>
+    <div class="socials-i ig" ><a href="mailto:riyanshj83@gmail.com" style="border-radius: 40px; border:2px solid rgb(57, 57, 57); padding: 10px;">riyanshj83@gmail.com</a></div>
     
   </div>
 </section>
-
+<br>
 <div class="divider"></div>
 
 
@@ -235,11 +319,25 @@
 	font-family: "Clash Display" !important;
 	font-size: 64px;
 }
+.social a {
+	cursor: pointer;
+	text-decoration: none;
+	font-family: "Clash Display" !important;
+	font-size: 32px;
+    align-items: center;
+}
+.socials-i a:hover{
+    background-color: rgb(57, 57, 57);
+    color: #fff;
 
+}
 @media (max-width: 900px) {
 	.socials .socials-container a {
 		font-size: 10px;
 	}
+    .social a {
+        font-size: 10px;
+    }
 }
 .hidden{
 	opacity: 0;

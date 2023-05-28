@@ -32,7 +32,7 @@
 				<div class="navbar">
 					<div class="navbar-container">
 						<div class="site-title"><a href="index.html" style="text-decoration: none;">RJ</a></div>
-						<div class="site-year"><a href="work.html" style="text-decoration: none;">WORK</a>,<a href="contact.html" style="text-decoration: none;">CONTACT</a></div>
+						<div class="site-year"><a href="about.html" style="text-decoration: none; text-decoration:underline!important;">ABOUT</a>,<a href="work.html" style="text-decoration: none ;" >WORK</a>,<a href="contact.html" style="text-decoration: none;">CONTACT</a></div>
 					</div>
 				</div>
 
@@ -49,7 +49,44 @@
 				<!-- hero-image -->
 				<div class="hero-image">
 					<div class="hero-image-container" data-scroll data-scroll-speed="2">
-						<img src="images/IMG_20230527_102439.jpg" alt="" />
+						<svg style="display: none;">
+							<defs>
+							  <filter id="noise">
+								<feTurbulence
+								  baseFrequency="0.7,0.8"
+								  seed="0"
+								  type="fractalNoise"
+								  result="static"
+								>
+								  <animate
+									attributeName="seed"
+									values="0;100"
+									dur="800ms"
+									repeatCount="1" 
+									begin="card.mouseenter"                           
+								  />
+								</feTurbulence>
+								<feDisplacementMap in="SourceGraphic" in2="static">
+								  <animate
+									attributeName="scale"
+									values="0;40;0"
+									dur="800ms"
+									repeatCount="1" 
+									begin="card.mouseenter"                           
+								  />
+								</feDisplacementMap>
+							  </filter>  
+							</defs>
+						  </svg>
+						  
+						  <div id="card">
+							<img 
+							  src="images/IMG_20230527_102439.jpg" 
+							  alt="Neon sign in woods" 
+							/>
+						  </div>
+						  
+						 
 					</div>
 				</div>
 
@@ -100,7 +137,7 @@
 							<nav class="menu">
 								<div class="menu__item">
 									<a class="menu__item-link">/ Google</a>
-									<img class="menu__item-img" src="images/project-one.jpeg" />
+									<img class="menu__item-img" src="images/cloud1.jpg" />
 									<div class="marquee">
 										<div class="marquee__inner">
 											<span>Digital Transformation With Google Cloud</span>
@@ -114,7 +151,7 @@
 
 								<div class="menu__item">
 									<a class="menu__item-link">/ Google</a>
-									<img class="menu__item-img" src="images/project-two.jpeg" />
+									<img class="menu__item-img" src="images/cloud2.jpg" />
 									<div class="marquee">
 										<div class="marquee__inner">
 											<span>Inovating with Data and Google Cloud</span>
@@ -128,7 +165,7 @@
 
 								<div class="menu__item">
 									<a class="menu__item-link">/ HackerRank</a>
-									<img class="menu__item-img" src="images/project-three.jpeg" />
+									<img class="menu__item-img" src="images/hr1.jpg" />
 									<div class="marquee">
 										<div class="marquee__inner">
 											<span>Python</span>
@@ -143,7 +180,7 @@
 
 								<div class="menu__item">
 									<a class="menu__item-link">/ HackerRank</a>
-									<img class="menu__item-img" src="images/project-four.jpeg" />
+									<img class="menu__item-img" src="images/hr2.jpg" />
 									<div class="marquee">
 										<div class="marquee__inner">
 											<span>Problem Solving(Basic)</span>
@@ -181,10 +218,18 @@
 				<div class="divider"></div>
 
 				<!-- footer -->
+				<br>
 				<div class="footer">
 					<div class="navbar">
 						<div class="navbar-container">
-							<div class="site-title">riyanshj83@gmail.com</div>
+							<div class="socials-i ig" ><a href="mailto:riyanshj83@gmail.com" style="border-radius: 40px; border:2px solid rgb(216, 216, 216); padding: 10px; text-decoration: none;">riyanshj83@gmail.com</a></div>
+							<style>
+							  .socials-i a:hover{
+								  background-color: rgb(216, 216, 216);
+								  color: rgb(57, 57, 57);
+								  }
+							</style>
+							</div>
 						
 						</div>
 					</div>
@@ -419,7 +464,7 @@ body {
 	--offset: 20vw;
 	--move-initial: calc(-25% + var(--offset));
 	--move-final: calc(-50% + var(--offset));
-	font-size: 8vw;
+	font-size: 1vw;
 }
 
 .marquee {
@@ -461,7 +506,7 @@ body {
 .menu__item-link,
 .marquee span {
 	white-space: nowrap;
-	font-size: 8vw;
+	font-size: 7vw;
 	padding: 1.6vw 1vw;
 	font-weight: 900;
 }
@@ -492,6 +537,7 @@ body {
 		transform: translate3d(var(--move-final), 0, 0);
 	}
 }
+
 
 /* clients */
 
@@ -550,6 +596,90 @@ body {
 .char {
     transform: translateY(115px);
     transition: transform .5s;
+}
+
+#card {
+  width: 580px;
+  aspect-ratio: 2 / 3;
+  border: 0.25rem solid rgb(255 255 255 / 15%);
+  border-radius: 1rem;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+#card > img {  
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+#card > img:hover {  
+background-image: image(src);
+}
+#card:hover > img {
+  animation: pulse 800ms ease-in-out;
+  filter: url(#noise);
+}
+
+@media(max-width: 768px) {
+  #card {
+    width: 100%;
+  }
+}
+
+/* -- Links -- */
+
+#links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  z-index: 10;
+  padding: 1rem;
+}
+
+.meta-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.meta-link > :is(span, a) {
+  font-family: "Rubik", sans-serif;
+  font-size: 1.25rem;
+  color: white;
+}
+
+.meta-link > .label {
+  text-align: right;
+}
+
+.meta-link > a {
+  text-decoration: none;
+  outline: none;
+}
+
+.meta-link > a.source {
+  color: rgb(94, 106, 210);
+}
+
+.meta-link > a:is(:hover, :focus) > i {
+  color: white;  
+}
+
+.meta-link > a.youtube {
+  color: rgb(239, 83, 80);
+}
+
+.meta-link > a.youtube > i {
+  padding-top: 0.2rem; 
+}
+
+.meta-link > a > i {
+  height: 1rem;
+  line-height: 1rem;
 }
     </style>
 <script>
