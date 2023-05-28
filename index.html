@@ -14,11 +14,24 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"/>
     <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.6.1/jquery.lettering.min.js" integrity="sha512-VJ/iYbiu1eJ6yLimfTi65t2R9TFcG5D9X8ZCfbbEFhTfPnKJh8byoKXEawi5ScJZBYL1eiirL1+MczZDx0Tz9Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js" integrity="sha512-0bHMhYsdpiur1bT84kDH4D7cpxFQ9O7uA5yxVAqWC87h552Xt0swX4M+ZlXMKE8oPVRIJ5lAwXWO2UWeDwJJOw==" crossorigin="anonymous"referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
 
     <!-- ionicons -->
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
   </head>
   <body>
+    <div id="black">
+      <h1 id="chaniru-start">RIYANSH JAIN <br> PORTFOLIO &copy;2023 <br> INDIA </h1>
+      <div id="rightscroll">
+          <h1 id="one">100</h1>
+          <h1 id="two">86</h1>
+          <h1 id="three">34</h1>
+          <h1 id="four">0</h1>
+      </div>
+  </div>
     <div class="wrapper">
       <!-- header -->
       <div class="header-container">
@@ -482,6 +495,98 @@ body {
     display: none;
   }
 }
+#black{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: whitesmoke;
+    z-index: 99;
+    overflow-x: hidden;
+}
+
+#rightscroll{
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 20%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+#rightscroll h1{
+    font-size: 5vw;
+}
+
+#chaniru-start{
+    height: 80px;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
 
   </style>
+  <script>
+    var tl = gsap.timeline();
+
+tl.from("#four",{
+    opacity:0,
+    y: 10,
+    duration:1,
+    ease: "Expo.easeInOut"
+})
+.to("#four",{
+    opacity:0,
+    y: -10,
+    duration:1,
+    ease: "Expo.easeInOut"
+})
+.from("#three",{
+    opacity:0,
+    y: 10,
+    duration:1,
+    ease: "Expo.easeInOut"
+})
+.to("#three",{
+    opacity:0,
+    y: -10,
+    duration:1,
+    ease: "Expo.easeInOut"
+})
+.from("#two",{
+    opacity:0,
+    y: 10,
+    duration:1,
+    ease: "Expo.easeInOut"
+})
+.to("#two",{
+    opacity:0,
+    y: -10,
+    duration:1,
+    ease: "Expo.easeInOut"
+})
+.from("#one",{
+    opacity:0,
+    y: 10,
+    duration:1,
+    ease: "Expo.easeInOut"
+})
+.to("#one",{
+    opacity:0,
+    y: -10,
+    duration:1,
+    ease: "Expo.easeInOut"
+})
+.to("#black",{
+    y: "-100%",
+    duration:1,
+    ease: "Expo.easeInOut"
+})
+
+  </script>
 </html>

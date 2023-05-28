@@ -40,9 +40,9 @@
 				<div class="divider"></div>
 
 				<!-- header -->
-				<div class="header">
-					<div class="header-container">
-						<h1>RIYANSH<br />JAIN<br />&nbsp;</h1>
+				<div class="header" >
+					<div class="header-container" >
+						<h1 id="my-text">RIYANSH<br />JAIN<br />&nbsp;</h1>
 					</div>
 				</div>
 
@@ -68,13 +68,13 @@
 				<!-- about -->
 				<section class="about">
 					<div class="about-container" data-aos="new-animation">
-						<p id="my-text" class="hidden">
+						<p class="hidden">
 							I aspire to become a Cloud Engineer and have a strong passion for coding,
 							app development, and software development. Throughout my work and project experiences,
 							I have predominantly focused on coding for the development of coding-based projects and 
 							various applications.
 						</p>
-						<p id="my-text" class="hidden">
+						<p class="hidden">
 							Currently, I am pursuing a Bachelor's degree in Computer Engineering with a specialization 
 							in Cloud Computing.
 						</p>
@@ -160,7 +160,7 @@
 						</div>
 					</div>
 				</section>
-				<div class="section-header">
+				<div class="section-header" >
 					<div class="section-header-container">
 						<div class="section-title">socials</div>
 						<div class="section-order">/004</div>
@@ -171,10 +171,10 @@
 
 				<section class="socials">
 					<div class="socials-container">
-						<div class="socials-id dr"><a href="">dribble</a></div>
-						<div class="socials-id ln"><a href="">linkedin</a></div>
-						<div class="socials-id ig"><a href="">instagram</a></div>
-						<div class="socials-id tw"><a href="">twitter</a></div>
+						<div class="socials-id dr"><a href="https://www.behance.net/riyujain1">Behance</a></div>
+						<div class="socials-id ln"><a href="https://www.linkedin.com/in/riyansh-jain-890275228">linkedin</a></div>
+						<div class="socials-id ig"><a href="https://instagram.com/jriyansh09?igshid=MzNlNGNkZWQ4Mg==">instagram</a></div>
+						<div class="socials-id tw"><a href="https://twitter.com/riyanshjain18?t=r3yL9QTeQLT1vDC5c78BvQ&s=09">twitter</a></div>
 					</div>
 				</section>
 
@@ -190,6 +190,7 @@
 					</div>
 				</div>
     <style>
+		
 * {
 	margin: 0;
 	padding: 0%;
@@ -263,11 +264,15 @@ body {
 .header {
 	margin: 80px 0;
 	z-index: 2 !important;
+	
+	
 }
 
 .header .header-container h1 {
 	font-family: "Clash Display";
-	font-size: 12rem;
+	font-size: 10rem;
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%)!important;
+	
 }
 
 @media (max-width: 900px) {
@@ -534,27 +539,17 @@ body {
 .hidden{
 	opacity: 0;
 	transition: all 1s;
+	filter: blur(5px);
+	transform: translateY(-10%) ;
 }
 .show{
 	opacity: 1;
+	filter: blur(0);
+	transform: translateY(0);
 }
-[data-aos="new-animation"] {
-	.char {
+.char {
     transform: translateY(115px);
     transition: transform .5s;
-}
-
-  &.aos-animate {
-    opacity: 1;
-  }
-
-  @media screen and (min-width: 768px) {
-    transform: translateX(100px);
-
-    &.aos-animate {
-      transform: translateX(0);
-    }
-  }
 }
     </style>
 <script>
@@ -562,9 +557,9 @@ body {
 
 gsap.to('.char', {
 	y: 0,
-	stagger: 0.005,
+	stagger: 0.05,
 	delay: 1,
-	duration: 0.00001,
+	duration: 0.01,
 })
 const observer = new IntersectionObserver((entries) => {
 	entries.forEach((entry)=>{
@@ -579,7 +574,10 @@ const observer = new IntersectionObserver((entries) => {
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el)=>observer.observe(el));
 
-  AOS.init();
+  
+
+
+
 
 </script>
 	</body>

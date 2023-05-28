@@ -389,8 +389,8 @@ body {
 							<div class="row">
 								  <div class="col-lg-8">
 	
-										<h3 class="wow fadeInUp" data-wow-delay="1s">work.</h3><br>
-										<p class="wow fadeInUp" data-wow-delay="1.2s">Welcome to my work section! I bring creativity and innovation to everything I do, whether it's designing a website, developing an app, or creating a custom branding strategy. Please enjoy browsing through my portfolio and let's create something amazing together!</p>
+										<h1 class="hidden">work.</h1><br>
+										<p class="hidden">Welcome to my work section! I bring creativity and innovation to everything I do, whether it's designing a website, developing an app, or creating a custom branding strategy. Please enjoy browsing through my portfolio and let's create something amazing together!</p>
 	
 								  </div>
 							</div>
@@ -402,10 +402,10 @@ body {
 				<!--------------- projects section starts here --------------->
 				
 				<div class="contain" >
-					  <div class="interactable" data-type="video">
+					  <div >
 					  <div class="work-items">
 						<span>
-							<div class="wow fadeInUp" data-wow-delay="1.4s">
+							<div class="hidden">
 						  <div class="work-item item-1">
 							<h1>SOCIAL</h1>
 							<span><img src="images/ui.png" alt="" /></span>
@@ -415,7 +415,7 @@ body {
 						  </div>
 						  </div>
 						</span>
-						<div class="wow fadeInUp" data-wow-delay="1.6s">
+						<div class="hidden">
 						<div class="line"></div>
 						<span>
 							
@@ -429,7 +429,7 @@ body {
 						  </div>
 							</div>
 						</span>
-						<div class="wow fadeInUp" data-wow-delay="1.8s">
+						<div class="hidden">
 						<div class="line"></div>
 						<span>
 							
@@ -443,7 +443,7 @@ body {
 						  </div>
 							</div>
 						</span>
-						<div class="wow fadeInUp" data-wow-delay="2s">
+						<div class="hidden">
 						<div class="line"></div>
 						<span>
 							
@@ -455,7 +455,7 @@ body {
 						  </div>
 							</div>
 						</span>
-						<div class="wow fadeInUp" data-wow-delay="2.2s">
+						<div class="hidden">
 						<div class="line"></div>
 						<span>
 							
@@ -469,7 +469,7 @@ body {
 						  </div>
 						  </div>
 						</span>
-						<div class="wow fadeInUp" data-wow-delay="2.4s">
+						<div class="hidden">
 						<div class="line"></div>
 						<span>
 							
@@ -488,10 +488,10 @@ body {
 
 		  <section class="socials">
 			  <div class="socials-container">
-				  <div class="socials-id dr"><a href="">dribble</a></div>
-				  <div class="socials-id ln"><a href="">linkedin</a></div>
-				  <div class="socials-id ig"><a href="">instagram</a></div>
-				  <div class="socials-id tw"><a href="">twitter</a></div>
+				  <div class="socials-id dr"><a href="https://www.behance.net/riyujain1">Behance</a></div>
+				  <div class="socials-id ln"><a href="https://www.linkedin.com/in/riyansh-jain-890275228">linkedin</a></div>
+				  <div class="socials-id ig"><a href="https://instagram.com/jriyansh09?igshid=MzNlNGNkZWQ4Mg==">instagram</a></div>
+				  <div class="socials-id tw"><a href="https://twitter.com/riyanshjain18?t=r3yL9QTeQLT1vDC5c78BvQ&s=09">twitter</a></div>
 			  </div>
 		  </section>
 
@@ -520,46 +520,22 @@ body {
 		  
 	
 	<script>
-		  const trailer = document.getElementById("trailer");
-	
-	const animateTrailer = (e, interacting) => {
-	const x = e.clientX - trailer.offsetWidth / 2,
-	  y = e.clientY - trailer.offsetHeight / 2;
-	
-	const keyframes = {
-	transform: `translate(${x}px, ${y}px) scale(${interacting ? 8 : 1})`
-	}
-	
-	trailer.animate(keyframes, { 
-	duration: 800, 
-	fill: "forwards" 
+
+	const observer = new IntersectionObserver((entries) => {
+	entries.forEach((entry)=>{
+		console.log(entry)
+		if (entry.isIntersecting){
+			entry.target.classList.add('show');
+		}else{
+			entry.target.classList.remove('show');
+		}
 	});
-	}
-	
-	const getTrailerClass = type => {
-	switch(type) {
-	case "video":
-	return "fa-sharp fa-solid fa-arrows-to-dot fa-spin";
-	
-	default:
-	return "fa-solid fa-location-arrow fa-bounce"; 
-	}
-	}
-	
-	window.onmousemove = e => {
-	const interactable = e.target.closest(".interactable"),
-	  interacting = interactable !== null;
-	
-	const icon = document.getElementById("trailer-icon");
-	
-	animateTrailer(e, interacting);
-	
-	trailer.dataset.type = interacting ? interactable.dataset.type : "";
-	
-	if(interacting) {
-	icon.className = getTrailerClass(interactable.dataset.type);
-	}
-	}
+});
+const hiddenElements = document.querySelectorAll('.hidden');
+hiddenElements.forEach((el)=>observer.observe(el));
+
+
+
 	</script>
 	</body>
 </html>
