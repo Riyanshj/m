@@ -16,6 +16,12 @@
 		<link href="https://api.fontshare.com/v2/css?f[]=clash-display@500&display=swap" rel="stylesheet">
 
 		<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.2.5/dist/locomotive-scroll.min.js"></script>
+		<script src="https://unpkg.com/split-type"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
 		
 	</head>
 	
@@ -61,14 +67,14 @@
 
 				<!-- about -->
 				<section class="about">
-					<div class="about-container">
-						<p>
+					<div class="about-container" data-aos="new-animation">
+						<p id="my-text" class="hidden">
 							I aspire to become a Cloud Engineer and have a strong passion for coding,
 							app development, and software development. Throughout my work and project experiences,
 							I have predominantly focused on coding for the development of coding-based projects and 
 							various applications.
 						</p>
-						<p>
+						<p id="my-text" class="hidden">
 							Currently, I am pursuing a Bachelor's degree in Computer Engineering with a specialization 
 							in Cloud Computing.
 						</p>
@@ -266,7 +272,7 @@ body {
 
 @media (max-width: 900px) {
 	.header .header-container h1 {
-		font-size: 5.4rem;
+		font-size: 4rem;
 	}
 }
 
@@ -313,6 +319,7 @@ body {
 	-ms-flex-pack: justify;
 	justify-content: space-between;
 }
+
 
 /* about */
 
@@ -524,14 +531,56 @@ body {
 		font-size: 10px;
 	}
 }
+.hidden{
+	opacity: 0;
+	transition: all 1s;
+}
+.show{
+	opacity: 1;
+}
+[data-aos="new-animation"] {
+	.char {
+    transform: translateY(115px);
+    transition: transform .5s;
+}
+
+  &.aos-animate {
+    opacity: 1;
+  }
+
+  @media screen and (min-width: 768px) {
+    transform: translateX(100px);
+
+    &.aos-animate {
+      transform: translateX(0);
+    }
+  }
+}
     </style>
-	<script>
-		const scroll = new LocomotiveScroll({
-			el: document.querySelector("#js-scroll"),
-			smooth: true,
-			smoothMobile: true,
-			inertia: 0.75,
-		});
-	</script>
+<script>
+	  const myText = new SplitType('#my-text')
+
+gsap.to('.char', {
+	y: 0,
+	stagger: 0.005,
+	delay: 1,
+	duration: 0.00001,
+})
+const observer = new IntersectionObserver((entries) => {
+	entries.forEach((entry)=>{
+		console.log(entry)
+		if (entry.isIntersecting){
+			entry.target.classList.add('show');
+		}else{
+			entry.target.classList.remove('show');
+		}
+	});
+});
+const hiddenElements = document.querySelectorAll('.hidden');
+hiddenElements.forEach((el)=>observer.observe(el));
+
+  AOS.init();
+
+</script>
 	</body>
 </html>
