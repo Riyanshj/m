@@ -6,33 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.6.1/jquery.lettering.min.js" integrity="sha512-VJ/iYbiu1eJ6yLimfTi65t2R9TFcG5D9X8ZCfbbEFhTfPnKJh8byoKXEawi5ScJZBYL1eiirL1+MczZDx0Tz9Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js" integrity="sha512-0bHMhYsdpiur1bT84kDH4D7cpxFQ9O7uA5yxVAqWC87h552Xt0swX4M+ZlXMKE8oPVRIJ5lAwXWO2UWeDwJJOw==" crossorigin="anonymous"referrerpolicy="no-referrer"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+
     <script src="wow.min.js"></script>
     <title>CONTACT</title>
 </head>
 <body>
+  
+  <div id="black">
+    <h1 id="chaniru-start"></h1>
+    <div id="rightscroll">
+      <h1 id="four"></h1>
+    </div>
+    </div>
+  
   <div class="navbar">
-    <div class="navbar-container">
+    <div class="navbar-container" >
       <div class="site-title"><a href="index.html">RJ</a></div>
       <div class="site-year"><a href="about.html" style="text-decoration: none;">ABOUT</a>,<a href="work.html" style="text-decoration: none;" >WORK</a>,<a href="contact.html" style="text-decoration: none; text-decoration:underline!important;">CONTACT</a></div>
     </div>
   </div>
+  <center>
   <div class="divider"></div>
+</center>
   <style>
-    .divider {
-		width: 100%;
-	height: 2px;
-	background: #1d1d1d;
-    
-    
+
+* {
+	margin: 0;
+  
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	font-family: "Clash Display";
+	
+}
+.divider {
+	width: 96%;
+	height: 2px!important;
+	background: rgb(57, 57, 57);
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .navbar .navbar-container {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	padding: 10px 0;
-    padding-top: 2.5px;
-    padding-left: 20px;
-    padding-right: 10px;
+	padding: 12px ;
+
 	font-size: 16px;
 	-webkit-box-pack: justify;
 	-ms-flex-pack: justify;
@@ -43,19 +65,20 @@
 	-webkit-box-flex: 1;
 	-ms-flex-positive: 1;
 	flex-grow: 1;
+  padding-left: 20px;
+  padding-right: 20px;
+
 }
 
-.navbar .navbar-container .site-type {
-	-webkit-box-flex: 1;
-	-ms-flex-positive: 1;
-	flex-grow: 1;
-}
+
 
 .navbar .navbar-container .site-year {
 	-webkit-box-flex: 2;
 	-ms-flex-positive: 2;
 	flex-grow: 2;
 	text-align: right;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 /* header */
@@ -74,6 +97,16 @@
 	.header .header-container h1 {
 		font-size: 5.4rem;
 	}
+  .navbar .navbar-container .site-title{
+    padding-left: 0px;
+  }
+  .navbar .navbar-container .site-year {
+    padding-right: 0px;
+  }
+}
+*{
+  padding-left: 0px;
+  padding-right: 0px;
 }
   </style>
  
@@ -129,6 +162,7 @@
 <div class="fill">
     <h1 style="padding-left: 20px; padding-bottom: 20px; font-size: 40px;">Fill the form to contact me</h1>
 </div>
+
 <div class="form" >
     <form action="https://formspree.io/f/myyaaldv"
     method="POST">
@@ -141,8 +175,12 @@
       <input type="submit" value="Submit">
         
     </form>
+
     <style>
         .form{
+          margin: auto;
+          align-self: center;
+          width: 98%;
             background-color: #fff;
             padding: 60px;
             border-radius: 40px;
@@ -211,26 +249,30 @@
     <h1 class="hidden"><a href="https://instagram.com/jriyansh09?igshid=MzNlNGNkZWQ4Mg==">INSTAGRAM</a></h1>
     <h1 class="hidden"><a href="https://www.linkedin.com/in/riyansh-jain-890275228">LinkedIn</a></h1>
 </div>
-<div class="line"></div>
-<div class="section-header">
+<center>
+<div class="divider"></div>
+</center>
+<div class="section-header"style="padding-left: 40px;">
   <div class="section-header-container">
-    <div class="section-title">Other socials</div>
+    <div class="section-title" >Other socials</div>
    
   </div>
 </div>
-
+<center>
 <div class="divider"></div>
+</center>
 
 <section class="social">
-  <div class="socials-container">
-    <div class="socials-id dr"><a href="https://www.behance.net/riyujain1">Behance</a></div><br>
+  <div class="socials-container" style="padding-left: 20px;">
+    <div class="socials-id dr"><a href="https://www.behance.net/riyujain1" style="padding-left: 10px;">Behance</a></div><br>
     <div class="socials-i ig" ><a href="mailto:riyanshj83@gmail.com" style="border-radius: 40px; border:2px solid rgb(57, 57, 57); padding: 10px;">riyanshj83@gmail.com</a></div>
     
   </div>
 </section>
 <br>
+<center>
 <div class="divider"></div>
-
+</center>
 
 </body>
 <style>
@@ -238,6 +280,7 @@
     font-family: "Clash Display" !important;
     background: #d4e879 !important;
     color: rgb(57, 57, 57) ;
+    
 }
     .socials{
         text-align: center;
@@ -325,6 +368,7 @@
 	font-family: "Clash Display" !important;
 	font-size: 32px;
     align-items: center;
+  padding-left: 20px!important;
 }
 .socials-i a:hover{
     background-color: rgb(57, 57, 57);
@@ -338,6 +382,12 @@
     .social a {
         font-size: 10px;
     }
+    .socials-container{
+      padding-left: 0%!important;
+    }
+    .section-header{
+      padding-left: 0%!important;
+    }
 }
 .hidden{
 	opacity: 0;
@@ -348,7 +398,45 @@
 	opacity: 1;
 	transform: translateY(0);
 }
-    
+
+#black{
+    padding-left: 0%!important;
+    padding-right: 0%!important;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    color: whitesmoke;
+    z-index: 99;
+    overflow-x: hidden;
+    align-items: center;
+}
+
+#rightscroll{
+  
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 20%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+#rightscroll h1{
+    font-size: 5vw;
+}
+
+#chaniru-start{
+    height: 80px;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+ 
 </style>
 <script>
     const svg = document.querySelector("#svg");
@@ -475,5 +563,28 @@
 });
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el)=>observer.observe(el));
+      </script>
+      <script>
+        var tl = gsap.timeline();
+    
+    tl.from("#four",{
+        opacity:0,
+        y: 10,
+        duration:1,
+        ease: "Expo.easeInOut"
+    })
+    .to("#four",{
+        opacity:0,
+        y: -10,
+        duration:1,
+        ease: "Expo.easeInOut"
+    })
+    
+    .to("#black",{
+        y: "-100%",
+        duration:1,
+        ease: "Expo.easeInOut"
+    })
+    
       </script>
 </html>

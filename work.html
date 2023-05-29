@@ -14,10 +14,19 @@
 		<link href="https://api.fontshare.com/v2/css?f[]=clash-display@500&display=swap" rel="stylesheet">
 
 		<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.2.5/dist/locomotive-scroll.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js" integrity="sha512-0bHMhYsdpiur1bT84kDH4D7cpxFQ9O7uA5yxVAqWC87h552Xt0swX4M+ZlXMKE8oPVRIJ5lAwXWO2UWeDwJJOw==" crossorigin="anonymous"referrerpolicy="no-referrer"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+
 		
 	</head>
 	
 	<body id="js-scroll">
+		<div id="black">
+			<h1 id="chaniru-start"></h1>
+			<div id="rightscroll">
+				<h1 id="four"></h1>
+			</div>
+			</div>
 		<div class="wrapper">
 			<div class="container">
 				<!-- navbar -->
@@ -375,6 +384,43 @@ body {
 		font-size: 10px;
 	}
 }
+#black{
+    padding-left: 0%!important;
+    padding-right: 0%!important;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    color: whitesmoke;
+    z-index: 99;
+    overflow-x: hidden;
+    align-items: center;
+}
+
+#rightscroll{
+  
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 20%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+#rightscroll h1{
+    font-size: 5vw;
+}
+
+#chaniru-start{
+    height: 80px;
+    margin-top: 5%;
+    margin-left: 5%;
+}
     </style>
 
 	            <!--------------- navbar ends here --------------->
@@ -502,7 +548,7 @@ body {
 		  <div class="footer">
 			  <div class="navbar">
 				  <div class="navbar-container">
-					<div class="socials-i ig" ><a href="mailto:riyanshj83@gmail.com" style="border-radius: 40px; border:2px solid rgb(57, 57, 57); padding: 10px;">riyanshj83@gmail.com</a></div>
+					<div class="socials-i ig" ><a href="mailto:riyanshj83@gmail.com" style="border-radius: 40px; border:2px solid rgb(57, 57, 57); padding: 10px; text-decoration: none;">riyanshj83@gmail.com</a></div>
 				  <style>
 					.socials-i a:hover{
 						background-color: rgb(57, 57, 57);
@@ -543,5 +589,28 @@ hiddenElements.forEach((el)=>observer.observe(el));
 
 
 	</script>
+	      <script>
+			var tl = gsap.timeline();
+		
+		tl.from("#four",{
+			opacity:0,
+			y: 10,
+			duration:1,
+			ease: "Expo.easeInOut"
+		})
+		.to("#four",{
+			opacity:0,
+			y: -10,
+			duration:1,
+			ease: "Expo.easeInOut"
+		})
+		
+		.to("#black",{
+			y: "-100%",
+			duration:1,
+			ease: "Expo.easeInOut"
+		})
+		
+		  </script>
 	</body>
 </html>

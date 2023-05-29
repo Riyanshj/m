@@ -18,14 +18,22 @@
 		<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.2.5/dist/locomotive-scroll.min.js"></script>
 		<script src="https://unpkg.com/split-type"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.6.1/jquery.lettering.min.js" integrity="sha512-VJ/iYbiu1eJ6yLimfTi65t2R9TFcG5D9X8ZCfbbEFhTfPnKJh8byoKXEawi5ScJZBYL1eiirL1+MczZDx0Tz9Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js" integrity="sha512-0bHMhYsdpiur1bT84kDH4D7cpxFQ9O7uA5yxVAqWC87h552Xt0swX4M+ZlXMKE8oPVRIJ5lAwXWO2UWeDwJJOw==" crossorigin="anonymous"referrerpolicy="no-referrer"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
 
 
 		
 	</head>
 	
 	<body id="js-scroll">
+		<div id="black">
+			<h1 id="chaniru-start"></h1>
+			<div id="rightscroll">
+				<h1 id="four"></h1>
+			</div>
+		</div>
 		<div class="wrapper">
 			<div class="container">
 				<!-- navbar -->
@@ -458,6 +466,11 @@ body {
 	-webkit-transition: all 0.4s;
 	transition: all 0.4s;
 }
+@media (max-width: 900px) {
+	.menu__item-img{
+		height: 20vh;
+	}
+}
 
 .menu {
 	padding: 0vh 0 0 0vh;
@@ -681,6 +694,48 @@ background-image: image(src);
   height: 1rem;
   line-height: 1rem;
 }
+
+
+
+
+
+
+
+#black{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: whitesmoke;
+    z-index: 99;
+    overflow-x: hidden;
+}
+
+#rightscroll{
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 20%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+#rightscroll h1{
+    font-size: 5vw;
+}
+
+#chaniru-start{
+    height: 80px;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+
     </style>
 <script>
 	  const myText = new SplitType('#my-text')
@@ -688,7 +743,7 @@ background-image: image(src);
 gsap.to('.char', {
 	y: 0,
 	stagger: 0.05,
-	delay: 1,
+	delay: 3,
 	duration: 0.01,
 })
 const observer = new IntersectionObserver((entries) => {
@@ -704,11 +759,29 @@ const observer = new IntersectionObserver((entries) => {
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el)=>observer.observe(el));
 
-  
-
-
-
-
 </script>
+<script>
+    var tl = gsap.timeline();
+
+tl.from("#four",{
+    opacity:0,
+    y: 10,
+    duration:1,
+    ease: "Expo.easeInOut"
+})
+.to("#four",{
+    opacity:0,
+    y: -10,
+    duration:1,
+    ease: "Expo.easeInOut"
+})
+
+.to("#black",{
+    y: "-100%",
+    duration:1,
+    ease: "Expo.easeInOut"
+})
+
+  </script>
 	</body>
 </html>
