@@ -7,7 +7,7 @@
     <title>Home</title>
 
     <!-- stylesheet -->
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="index_hidden.css" />
 
     <!-- fonts - poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,516 +23,367 @@
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
   </head>
   <body>
-    <div id="black">
-      <h1 id="chaniru-start">RIYANSH JAIN <br> PORTFOLIO &copy;2023 <br> INDIA </h1>
-      <div id="rightscroll">
-          <h1 id="one">100</h1>
-          <h1 id="two">86</h1>
-          <h1 id="three">34</h1>
-          <h1 id="four">0</h1>
+    <style>
+      .menu-container {
+          position: fixed;
+          top: 1rem;
+          right: 1rem;
+          width: 240px;
+          height: 50px;
+          overflow: hidden;
+          filter: none;
+          z-index: 2;
+          
+      }
+
+      .menu-container .col {
+          position: absolute;
+          width: 240px;
+          cursor: pointer;
+          height: 50px;
+          
+          
+      }
+
+      .menu-container .col:nth-child(1) {
+          left: 0;
+          
+      }
+
+      .menu-container .col:nth-child(2) {
+          left: 240px;
+          height: 50px;
+      }
+
+      .menu-container .col .menu-item {
+          background: #ff6200;
+          color: #dcdcdc;
+          margin: 0.075rem;
+          padding: 0.50rem;
+          
+          font-size: 15px!important;
+          
+      }
+
+      .menu-container .col-2 .menu-item {
+          position: relative;
+          left: 240px;
+          font-size: 15px!important;
+          }
+
+          @media (max-width: 992px) {
+              .menu-container {
+
+                  right: 1rem;
+                  width: 100px;
+          
+      }
+      .menu-container .col .menu-item {
+        
+          
+          font-size: 10px!important;
+          padding: 0.25rem;
+          
+      }
+
+      .menu-container .col-2 .menu-item {
+        
+          font-size: 10px!important;
+          padding: 0.25rem;
+          }
+          
+}
+  </style>
+</head>
+<body>
+  <div id="black">
+    <h1 id="chaniru-start">RIYANSH JAIN <br> PORTFOLIO &copy;2023 <br> INDIA </h1>
+    <div id="rightscroll">
+        <h1 id="one">100</h1>
+        <h1 id="two">86</h1>
+        <h1 id="three">34</h1>
+        <h1 id="four">0</h1>
+    </div>
+</div>
+  <div class="menu-container">
+      <div class="col col-1">
+          <div class="menu-item" id="menu-toggle">menu</div>
+      </div>
+      <div class="col col-2">
+          <div class="menu-item" id="close-menu">close</div>
+          <div class="menu-item"><a href="index.html" style="text-decoration: none; color: #ffffff;">home</a></div>
+          <div class="menu-item"><a href="about.html" style="text-decoration: none; color: #ffffff;">about</a></div> 
+          <div class="menu-item"><a href="work.html" style="text-decoration: none; color: #ffffff;">projects</a></div>
+          <div class="menu-item"><a href="contact.html" style="text-decoration: none; color: #ffffff;">contact</a></div>
       </div>
   </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script>
+const tle = gsap.timeline({ paused: true });
+function revealMenu() {
+  revealMenuItems();
+
+  const toggleBtn = document.getElementById("menu-toggle");
+  const closeBtn = document.getElementById("close-menu");
+
+  toggleBtn.onclick = function (e) {
+      tle.reversed(!tle.reversed());
+  };
+
+  closeBtn.onclick = function (e) {
+      tle.reversed(!tle.reversed());
+  };
+}
+
+revealMenu();
+
+function revealMenuItems() {
+    
+  tle.to(".menu-container", 0.01, {
+      height: "210px",
+  });
+
+  tle.to(".col-1", 1, {
+      left: "-200px",
+      ease: "power4.inOut",
+  });
+
+  tle.to(".col-2",
+0.25,
+{
+    left:"0px",
+    ease: "power4.inOut",
+},
+"<"
+)
+
+  tle.to(".col-2 > .menu-item", 1, {
+      left: 0,
+      ease: "power4.inOut",
+      stagger: {
+          amount: 0.25,
+      },
+  }, "<").reverse();
+}
+  </script>
+
     <div class="wrapper">
-      <!-- header -->
-      <div class="header-container">
-        <div class="header">RIYANSH JAIN</div>
+      <div id="textt"><div id="textt">
+        <div class="linee">
+          <p class="wordd">RIYANSH</p>
+          <p class="wordd">JAIN</p>
+        </div>
+      
+        <div class="linee">
+          <p class="wordd">INNOVATOR</p>
+          <p class="wordd">&</p>
+        </div>
+      
+        <div class="linee">
+          <p class="wordd">ACHIEVER</p>
+        </div>
+        
+        <div class="linee" style="text-decoration-color: black;">
+          <a 
+             id="channel-link" 
+             href="mailto:riyanshj83@gmail.com"
+             target="_blank" 
+             class="wordd fancy"
+          >
+          
+          >CONTACT_ME
+          </a>
+          
+        </div>
+        
       </div>
+      
+ 
 
       <!-- nav -->
-      <div class="nav-container">
-        <div class="nav-left">
-          <div class="services nav-item">
-            <div class="services nav-item">
-              <div class="card-container">
-                <div class="shapes-container">
-                  <div class="shapes">
-                    <div id="square"></div>
-                    <div id="circle"></div>
-                    <div id="triangle"></div>
-                  </div>
-                </div>
-                <div class="card">
-                  <div class="card-title">LITTLE ABOUT ME</div>
-                  <div class="card-logo">
-                    <ion-icon name="logo-codepen"></ion-icon>
-                  </div>
-                  <div class="card-icon"><a href="about.html">
-                    <ion-icon name="arrow-down-sharp"></ion-icon>
-                    </a>
-                  </div>
 
-                  <div class="preview-text">RIYANSH JAIN</a></div>
-                  <div class="text-wrapper">
-                    Codedamn | Cloud Computing | Self Building |
-                    Codedamn | Cloud Computing | Self Building |
-                    Codedamn | Cloud Computing | Self Building |
-                    Codedamn | Cloud Computing | Self Building |
-                    Codedamn | Cloud Computing | Self Building |
-                    Codedamn | Cloud Computing | Self Building |
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="nav-right">
-          <div class="nav-top">
-            <div class="about nav-item">
-              <div class="card-container">
-                <div class="card">
-                  <div class="card-icon">
-                    <ion-icon name="code-working-sharp"></ion-icon>
-                  </div>
-                  <a href="about.html">X
-                  <div class="preview-text">About us</div>
-                  <div class="text-wrapper">
-                    Learn more about us. Learn more about us. Learn more about
-                    us. Learn more about us. Learn more about us. Learn more
-                    about us. Learn more about us. Learn more about us. Learn
-                    more about us. Learn more about us. Learn more about us.
-                    Learn more about us. Learn more about us. Learn more about
-                    us. Learn more about us.
-                    
-                  </div>
-                </div>
-              </div>
-            </a>
-            </div>
-
-            <div class="work nav-item ">
-              <div class="card-container">
-                <div class="card">
-                  <div class="card-icon">
-                    <ion-icon name="business-sharp"></ion-icon>
-                  </div>
-                  <a href="work.html">
-                  <div class="preview-text light">Work</div>
-                  <div class="text-wrapper light">
-                    View our showcase. View our showcase. View our showcase.
-                    View our showcase. View our showcase. View our showcase.
-                    View our showcase. View our showcase. View our showcase.
-                    View our showcase. View our showcase. View our showcase.
-                    View our showcase. View our showcase. View our showcase.
-                    View our showcase. View our showcase. View our showcase.
-                    View our showcase. View our showcase. View our showcase.
-                    View our showcase. View our showcase. View our showcase.
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </a>
-          <a href="contact.html">
-          <div class="nav-bottom">
-            
-            <div class="contact nav-item">
-              <div class="contact nav-item">
-                <div class="card-container">
-                  <div class="card">
-                    <div class="card-icon">
-                      <ion-icon name="send-sharp"></ion-icon>
-                    </div>
-
-                    <div class="preview-text">Contact us</div>
-                    <div class="text-wrapper">
-                      Get in touch. Let's talk businesss. Get in touch. Let's
-                      talk businesss. Get in touch. Let's talk businesss. Get in
-                      touch. Let's talk businesss. Get in touch. Let's talk
-                      businesss. Get in touch. Let's talk businesss. Get in
-                      touch. Let's talk businesss. Get in touch. Let's talk
-                      businesss. Get in touch. Let's talk businesss. Get in tGet
-                      in touch. Let's talk businesss. Get in touch. Let's talk
-                      businesss. Get in touch. Let's talk businesss. ouch. Let's
-                      talk businesss. Get in touch. Let's talk businesss.
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-          </div>
-        </div>
       
       </div>
     </div>
   </body>
   <style>
-    * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Clash Display";
+    :root {  
+  --green: rgb(255, 106, 0);
+  --blue: rgb(255, 106, 0);
 }
 
-html,
-body {
-  font-family: "Clash Display" !important;
-      background: rgb(195, 195, 195) !important;
-      color: rgb(57, 57, 57) !important;
-}
-
-/* header */
-
-.header-container {
-  color: rgb(57, 57, 57);
-  width: 100%;
-  height: 40vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.header {
-  font-size: 54px;
-  font-weight: 600;
-}
-
-@media (max-width: 900px) {
-  .header {
-    font-size: 30px;
+@keyframes float {
+  from, to {
+    transform: translateY(-0%);
   }
-
-  .header span {
-    left: 20px;
-    font-size: 12px;
+  
+  50% {    
+    transform: translateY(-3%);
   }
 }
 
-/* nav */
-
-.nav-container {
-  color: #fff;
-  width: 100%;
-  height: 60vh;
-  display: flex;
-  flex-direction: row;
-}
-
-.nav-container > * {
-  flex: 1 100%;
-}
-
-.nav-top {
-  display: flex;
-  flex-direction: row;
-}
-
-.nav-top > * {
-  flex: 1 100%;
-}
-
-@media (max-width: 900px) {
-  .nav-container {
-    flex-direction: column;
-  }
-
-  .nav-top {
-    flex-direction: column;
-  }
-}
-
-/* card basic styling */
-
-.card-container {
-  position: relative;
-  width: 25vw;
-  height: 30vh;
-  transition: all 0.3s ease-out;
-  overflow: hidden;
-  border-radius: 80px;
-  transform: scale(0.98);
-}
-
-.card {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.card-container:hover {
-  transform: scale(0.92);
-  border-radius: 80px;
-  cursor: pointer;
-}
-
-.card-icon {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  padding: 50px;
-  font-size: 20px;
-  z-index: 2;
-}
-
-.preview-text {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  padding: 50px;
-  font-size: 20px;
-  font-weight: 400;
-}
-
-.text-wrapper {
-  position: absolute;
-  top: 50%;
-  left: -20%;
-  transform: translate(0, -50%);
-  font-size: 40px;
-  font-weight: 400;
-  white-space: nowrap;
-  transition: 0.2s ease-out;
-  animation: float-text 30s linear infinite;
-  animation-delay: 0s;
-  opacity: 0;
-  padding: 20px 0;
-}
-
-@keyframes float-text {
-  0% {
-    left: -20%;
-  }
-
-  50% {
-    left: -100%;
-  }
-
-  100% {
-    left: -20%;
-  }
-}
-
-.card-container:hover .text-wrapper {
-  opacity: 1;
-}
-
-/* custom styling for nav items */
-
-/* services */
-
-.services .card-container {
-  background: #ff4c00;
-  width: 50vw;
-  height: 60vh;
-}
-
-.services .text-wrapper {
-  font-size: 70px;
-  opacity: 1;
-}
-
-.services .card-container:hover .text-wrapper {
-  opacity: 0;
-}
-
-.card-title {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 50px;
-  font-size: 20px;
-  font-weight: 400;
-}
-
-.card-logo {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 50px;
-  font-size: 40px;
-  text-transform: uppercase;
-}
-
-/* shapes container */
-
-.shapes-container {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.shapes {
-  width: 35vh;
-  height: 35vh;
-  animation: round_round 12s linear infinite;
-}
-
-
-
-#circle {
-  position: relative;
-  left: 0;
-  bottom: 0;
-  width: 100px;
-  height: 100px;
-  background: #a5a1ff;
-  border-radius: 50%;
-  transition: 0.2s;
-}
-
-#triangle {
-  position: relative;
-  top: -10%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border-left: 60px solid transparent;
-  border-right: 60px solid transparent;
-  border-bottom: 100px solid #a5a1ff;
-  animation: round_round 12s linear infinite;
-  transition: 0.2s;
-}
-
-.card-container:hover #square {
-  background: #fff;
-}
-
-.card-container:hover #circle {
-  background: #ffc0cb;
-}
-
-.card-container:hover #triangle {
-  border-bottom: 100px solid #fff480;
-}
-
-@keyframes round_round {
+@keyframes background-pan {
   from {
-    transform: rotate(0deg);
+    background-position: 1000% center;
   }
+  
   to {
-    transform: rotate(360deg);
+    background-position: 0% center;
   }
 }
 
-/* work */
-
-.work .card-container {
-  background: #fff;
+body {
+  height: 100vh;
+  background-color: black!important;
+  margin: 0rem;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
 }
 
-.work .preview-text,
-.work .card-icon {
-  color: #000;
+.linee {
+  display: flex;
+  justify-content: space-between;
 }
 
-.work .card-container:hover .preview-text,
-.work .card-container:hover .card-icon {
-  transition: 0.2s;
-  color: #fff;
+.wordd {
+  color: white;
+  font-size: clamp(2rem, 8vw, 10rem);
+  font-family: "Rubik", sans-serif;
+  margin: 0rem;
+  text-transform: uppercase;
+  transition: opacity 250ms ease;
 }
 
-.work .card-container:hover .text-wrapper {
-  color: #000;
+a {
+  text-decoration: none;
 }
 
-/* about */
-
-.about .card-container {
-  background: #1b1b1f;
+#textt:has(.fancy:hover) .wordd:not(.fancy:hover) {
+  opacity: 0.2;
 }
 
-.about .card-container:hover .preview-text,
-.about .card-container:hover .card-icon {
-  transition: 0.2s;
-  color: #1b1b1f;
+.fancy span {
+  display: inline-block;
 }
 
-/* contact */
-
-.contact .card-container {
-  background: #d4e879;
-  width: 50vw;
-  transform: scale(0.99, 0.93);
+.fancy > .outer {
+  transition: transform 350ms ease;
 }
 
-.contact .card-container:hover {
-  transform: scale(0.96, 0.92);
+.fancy:hover > .outer {
+  transition-duration: 800ms;
 }
 
-.contact .preview-text,
-.contact .card-icon {
-  color: #000;
+.fancy:hover > .outer > .inner {
+  animation: float 5s ease infinite;
 }
 
-.contact .card-container:hover .preview-text,
-.contact .card-container:hover .card-icon {
-  transition: 0.2s;
-  color: #d4e879;
+.fancy:hover > .outer > .inner > .letter {
+  background: linear-gradient(
+    to right,
+    var(--blue),
+    var(--green),
+    var(--blue)
+  );
+  background-size: 1000%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: background-pan 150s linear infinite;
 }
 
-.contact .card-container:hover .text-wrapper {
-  color: #000;
+.fancy:hover > .outer:nth-child(1) {
+  transform: translate(-80%, 60%) rotate(8deg);
 }
 
-/* media queries */
-
-@media (max-width: 900px) {
-  .card-container {
-    width: 100%;
-  }
-
-  .contact .card-container {
-    width: 100%;
-  }
-
-  .services .card-container {
-    width: 100%;
-    height: 30vh;
-  }
-
-  .services .text-wrapper {
-    font-size: 40px;
-  }
-
-  .services .card-title,
-  .services .card-logo {
-    display: none;
-  }
-
-  .shapes-container {
-    display: none;
-  }
-}
-#black{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    color: whitesmoke;
-    z-index: 99;
-    overflow-x: hidden;
+.fancy:hover > .outer:nth-child(2) {
+  transform: translate(-40%, 20%) rotate(4deg);
 }
 
-#rightscroll{
-    position: absolute;
-    top: 0%;
-    right: 0%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    width: 20%;
-    overflow-y: hidden;
-    overflow-x: hidden;
-    height: 100%;
+.fancy:hover > .outer:nth-child(3) {
+  transform: translate(-10%, 60%) rotate(-6deg);
 }
 
-#rightscroll h1{
-    font-size: 5vw;
+.fancy:hover > .outer:nth-child(4) {
+  transform: translate(0%, 8%) rotate(-8deg);
 }
 
-#chaniru-start{
-    height: 80px;
-    margin-top: 5%;
-    margin-left: 5%;
+.fancy:hover > .outer:nth-child(5) {
+  transform: translate(0%, -20%) rotate(5deg);
+}
+
+.fancy:hover > .outer:nth-child(6) {
+  transform: translate(0%, 20%) rotate(-3deg);
+}
+
+.fancy:hover > .outer:nth-child(7) {
+  transform: translate(0%, -40%) rotate(-5deg);
+}
+
+.fancy:hover > .outer:nth-child(8) {
+  transform: translate(0%, 15%) rotate(10deg);
+}
+
+.fancy:hover > .outer:nth-child(9) {
+  transform: translate(0%, -50%) rotate(8deg);
+}
+
+.fancy:hover > .outer:nth-child(10) {
+  transform: translate(0%, 15%) rotate(-6deg);
+}
+
+.fancy:hover > .outer:nth-child(11) {
+  transform: translate(50%, -10%) rotate(-3deg);
+}
+
+.fancy:hover > .outer:nth-child(12) {
+  transform: translate(120%, -30%) rotate(-10deg);
+}
+
+/* -- YouTube Link Styles -- */
+
+body.menu-toggled > .meta-link > span {
+  color: rgb(30, 30, 30);
 }
 
 
+.meta-link {
+  align-items: center;
+  backdrop-filter: blur(3px);
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  bottom: 10px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;  
+  display: inline-flex;
+  gap: 5px;
+  left: 10px;
+  padding: 10px 20px;
+  position: fixed;
+  text-decoration: none;
+  transition: background-color 400ms, border-color 400ms;
+  z-index: 10000;
+}
+
+.meta-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.meta-link > i, .meta-link > span {
+  height: 20px;
+  line-height: 20px;
+}
+
+.meta-link > span {
+  color: white;
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+}
   </style>
+
   <script>
     var tl = gsap.timeline();
 
@@ -589,6 +440,44 @@ tl.from("#four",{
     duration:1,
     ease: "Expo.easeInOut"
 })
+
+
+const rand = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+const enhance = id => {
+  const element = document.getElementById(id),
+        text = element.innerText.split("");
+  
+  element.innerText = "";
+  
+  text.forEach((value, index) => {
+    const outer = document.createElement("span");
+    
+    outer.className = "outer";
+    
+    const inner = document.createElement("span");
+    
+    inner.className = "inner";
+    
+    inner.style.animationDelay = `${rand(-5000, 0)}ms`;
+    
+    const letter = document.createElement("span");
+    
+    letter.className = "letter";
+    
+    letter.innerText = value;
+    
+    letter.style.animationDelay = `${index * 1000 }ms`;
+    
+    inner.appendChild(letter);    
+    
+    outer.appendChild(inner);    
+    
+    element.appendChild(outer);
+  });
+}
+
+enhance("channel-link");
 
   </script>
 </html>
