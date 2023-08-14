@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@500&display=swap" rel="stylesheet">
+<title>Project</title>
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-family: Clash Display;
+  }
+  .work-section {
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff;
+  }
+  .block-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #39ff14;
+    border-top: 1px solid #ccc;
+    flex: 1;
+    max-width: 100%;
+  }
+  .block {
+    position: relative;
+    flex: 1;
+    background-color: #ffffff; /* Default gray color */
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin-bottom: -10px; /* Overlap by 10% of height */
+    border: 2px solid #000000; /* Black border */
+    border-radius: 10px; /* Rounded corners */
+    display: flex;
+    flex-direction: column; /* Set the direction to column */
+    align-items: flex-start; /* Align text to the left */
+    justify-content: center;
+    overflow: hidden;
+    padding-left: 15px; /* Add left padding for better spacing */
+  }
+  .block .content {
+    font-size: 1rem; /* Default font size */
+    padding: 10px;
+    color: rgb(0, 0, 0); /* Text color */
+  }
+  .block:hover {
+    flex: 2;
+    background-color: #39ff14; /* Neon color on hover */
+    border-color: #39ff14; /* Neon color for outline on hover */
+  }
+</style>
+</head>
+<body>
+  
+    <style>
+        .menu-container {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            width: 240px;
+            height: 50px;
+            overflow: hidden;
+            filter: none;
+            z-index: 999;
+            
+        }
+
+        .menu-container .col {
+            position: absolute;
+            width: 240px;
+            cursor: pointer;
+            height: 50px;
+            
+            
+        }
+
+        .menu-container .col:nth-child(1) {
+            left: 0;
+            
+        }
+
+        .menu-container .col:nth-child(2) {
+            left: 240px;
+            height: 50px;
+        }
+
+        .menu-container .col .menu-item {
+            background: #ff6200;
+            color: #ffffff;
+            margin: 0.075rem;
+            padding: 0.50rem;
+            
+            font-size: 15px!important;
+            
+        }
+
+        .menu-container .col-2 .menu-item {
+            position: relative;
+            left: 240px;
+            font-size: 15px!important;
+            }
+
+            @media (max-width: 992px) {
+                .menu-container {
+
+                    right: 1rem;
+                    width: 100px;
+            
+        }
+        .menu-container .col .menu-item {
+          
+            
+            font-size: 10px!important;
+            padding: 0.25rem;
+            
+        }
+
+        .menu-container .col-2 .menu-item {
+          
+            font-size: 10px!important;
+            padding: 0.25rem;
+            }
+            
+}
+.col .col-1 .play{
+  top: 0%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background-color: #ff6200; /* Button color */
+      border-radius: 50%; /* Make it circular */
+      cursor: pointer;
+      font-size: 24px;
+      color: rgb(0, 0, 0);
+    }
+    </style>
+</head>
+<body>
+    
+    <div class="menu-container">
+      
+        
+        <div class="col col-1">
+          
+            <div class="menu-item" id="menu-toggle">menu</div>
+        </div>
+        <div class="col col-2">
+            <div class="menu-item" id="close-menu">close</div>
+            <div class="menu-item"><a href="index.html" style="text-decoration: none; color: #ffffff;">home</a></div>
+            <div class="menu-item"><a href="about.html" style="text-decoration: none; color: #ffffff;">about</a></div> 
+            <div class="menu-item"><a href="work.html" style="text-decoration: none; color: #ffffff;">projects</a></div>
+            <div class="menu-item"><a href="contact.html" style="text-decoration: none; color: #ffffff;">contact</a></div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script>
+const tl = gsap.timeline({ paused: true });
+function revealMenu() {
+    revealMenuItems();
+
+    const toggleBtn = document.getElementById("menu-toggle");
+    const closeBtn = document.getElementById("close-menu");
+
+    toggleBtn.onclick = function (e) {
+        tl.reversed(!tl.reversed());
+    };
+
+    closeBtn.onclick = function (e) {
+        tl.reversed(!tl.reversed());
+    };
+}
+
+revealMenu();
+
+function revealMenuItems() {
+      
+    tl.to(".menu-container", 0.01, {
+        height: "210px",
+    });
+
+    tl.to(".col-1", 1, {
+        left: "-200px",
+        ease: "power4.inOut",
+    });
+
+    tl.to(".col-2",
+0.25,
+{
+      left:"0px",
+      ease: "power4.inOut",
+},
+"<"
+)
+
+    tl.to(".col-2 > .menu-item", 1, {
+        left: 0,
+        ease: "power4.inOut",
+        stagger: {
+            amount: 0.25,
+        },
+    }, "<").reverse();
+}
+    </script>
+  <div class="work-section">
+    <h1 style="font-size: 64px;">MY PROJECTS <a href="play.html"><button style="border-width: 2px; border-radius: 10px; border-color: #000000; cursor: pointer; background-color: #39ff14; "> want to play</button></a></h1> 
+    <p style="font-size: 24px;"> Welcome to my work section! Please enjoy browsing through my portfolio and let's create something amazing together!
+      
+    </p>
+  </div>
+  <div class="block-container">
+    <div class="block">
+      <div class="content" style="font-size: 64px;">SOCIAL MEDIA UI
+    
+    </div>
+     
+    </div>
+    <div class="block">
+      <div class="content" style="font-size: 64px;">RACING GAME</div>
+    </div>
+    <div class="block">
+      <div class="content" style="font-size: 64px;">STACK GAME</div>
+    </div>
+    <div class="block">
+      <div class="content" style="font-size: 64px;">NETFLIX REDESIGNED</div>
+    </div>
+    <div class="block">
+      <div class="content" style="font-size: 64px;">MORE SOON</div>
+    </div>
+  </div>
+  <script>
+    const blocks = document.querySelectorAll('.block');
+    
+    blocks.forEach(block => {
+      block.addEventListener('mouseenter', () => {
+        const neonColor = getRandomNeonColor();
+        gsap.to(block, { 
+          backgroundColor: neonColor,
+          borderColor: neonColor,
+          height: '200px', // Expand more (adjust as needed)
+          ease: 'power3.out' // Use a smooth easing
+        });
+      });
+      
+      block.addEventListener('mouseleave', () => {
+        gsap.to(block, { 
+          backgroundColor: '#ffffff', // Reset to default gray
+          borderColor: '#000000', // Reset border color to black
+          height: '100px', // Reset height
+          ease: 'power3.out' // Use a smooth easing
+        });
+      });
+    });
+    
+    function getRandomNeonColor() {
+      const letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+    gsap.from('.work-section', {
+      opacity: 0,
+      y: -20,
+      duration: 1,
+      delay: 0.5,
+      ease: 'power3.out'
+    });
+    
+    gsap.from('.block', {
+      opacity: 0,
+      y: 20,
+      duration: 1,
+      stagger: 0.2,
+      ease: 'power3.out',
+      delay: 1
+    });
+    
+    const splitText = new SplitText("#work-heading", { type: "chars" });
+    gsap.from(splitText.chars, {
+      opacity: 0,
+      y: -20,
+      duration: 1,
+      stagger: 0.05,
+      ease: 'power3.out',
+      delay: 1.5
+    });
+  </script>
+</body>
+</html>
